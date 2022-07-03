@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Earth defense</title>
+  </head>
+  <body>
+    <div class="menu" id="menu">
+      <h1>Earth defense</h1>
+      <div class="settings">
+        <div id="text"></div>
+        <ul id="list">
+          <li data-text="&nbsp;Start">&nbsp;Start&nbsp;</li>
+          <li data-text="&nbsp;Control">&nbsp;Control&nbsp;</li>
+          <li data-text="&nbsp;Lvl">&nbsp;Lvl&nbsp;</li>
+          <li data-text="&nbsp;About">&nbsp;About&nbsp;</li>
+        </ul>
+        <br />
+        <div class="arrow" id="arrow">
+          <img src="img/back.png" alt="back" />
+        </div>
+      </div>
+      <div class="earth" id="earth">
+        <img src="img/earth.webp" alt="earth" />
+      </div>
+      <div class="cloud" id="cloud">
+        <p>ПАМАГИТИ!!1</p>
+        <img src="img/cloud.png" alt="cloud" />
+      </div>
+    </div>
+    <div class="container" id="container">
+      <div class="game-info">
+        <p id="population">Earth population: 8 000 000 000</p>
+        <br />
+        <p id="score">Score: 0</p>
+      </div>
+      <div class="asteroids" id="asteroids"></div>
+      <div class="beams" id="beams">
+        <div class="beam"></div>
+      </div>
+      <div class="ship" id="ship">
+        <img src="img/ship.webp" alt="ship" />
+      </div>
+      <div class="end-game" id="endgame">
+        <div class="end-info">
+          <div class="header">
+            All humanity has been defeated by doom from deep space
+          </div>
+          <div class="main-text">GAME OVER</div>
+          <div class="results" id="results"></div>
+        </div>
+        <div class="reset">
+          Click Earth to continue
+          <img src="img/earth.webp" alt="earth" id="refresh" />
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

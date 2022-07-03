@@ -1,0 +1,419 @@
+* {
+  max-width: 1900px;
+  max-height: 950px;
+  margin: 0;
+  padding: 0;
+  font-family: 'Press Start 2P', cursive;
+  user-select: none;
+}
+
+body {
+  min-width: 1800px;
+  min-height: 937px;
+  background: black;
+}
+
+.hide {
+  transition: 5s !important;
+  transform: scale(0) rotateZ(1080deg);
+  filter: opacity(0);
+}
+
+.menu {
+  overflow-x: hidden;
+  position: relative;
+  display: flex;
+  /* display: none; */
+  width: 100%;
+  height: 100vh;
+  background: url(img/space.png);
+  background-position: 0px 40%;
+  background-size: cover;
+  align-items: center;
+  justify-content: center;
+}
+
+h1 {
+  position: absolute;
+  font-size: 72px;
+  top: 5%;
+  color: wheat;
+}
+
+.settings {
+  position: absolute;
+  display: flex;
+  width: 500px;
+  height: 500px;
+  align-items: center;
+  justify-content: center;
+  top: 20%;
+  left: 7%;
+  position: absolute;
+}
+
+.set-lvl {
+  position: relative;
+}
+
+.set-lvl li::after {
+  content: '←';
+  position: absolute;
+  display: inline-flex;
+  font-size: 72px;
+  transform: translate(150px, -45px);
+  color: transparent;
+}
+
+.set-lvl li:hover {
+  cursor: pointer;
+  transition: 1.5s;
+  transform: scale(1.2);
+}
+
+.set-lvl li:hover::after {
+  transition: 1.5s;
+  transform: translate(0px, -45px);
+  color: #00ade1;
+}
+
+#text {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  color: transparent;
+  align-self: start;
+  list-style: none;
+}
+
+#text li {
+  color: #00ade1;
+  font-size: 24px;
+  transition: 2s;
+}
+
+.arrow {
+  display: none;
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  left: -3%;
+  filter: invert(1);
+  align-self: flex-end;
+  transition: 1s;
+  cursor: pointer;
+}
+
+.arrow::after {
+  position: absolute;
+  content: 'back';
+  font-size: 34px;
+  top: 30%;
+}
+
+.arrow img {
+  width: 100%;
+  height: 100%;
+}
+
+.arrow:hover {
+  transform: translateX(-20px);
+}
+
+.settings > ul {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.settings ul > li {
+  list-style: none;
+  margin-bottom: 60px;
+  font-size: 52px;
+  color: transparent;
+}
+
+.settings ul > li::before {
+  content: attr(data-text);
+  position: absolute;
+  color: #00ade1;
+  width: 0%;
+  overflow: hidden;
+  transition: 2s;
+  border-right: 30px solid #00ade1;
+  border-radius: 5px;
+}
+
+.settings ul > li:hover::before {
+  width: 100%;
+}
+
+.earth {
+  display: flex;
+  width: 500px;
+  height: 500px;
+  align-items: center;
+  justify-content: center;
+}
+
+.earth:hover {
+  cursor: pointer;
+}
+
+.earth img {
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+}
+
+
+.earth::before {
+  content: '';
+  position: absolute;
+  top: 60%;
+  left: 70%;
+  width: 200px;
+  height: 200px;
+  background: url(img/asteroid.png);
+  background-size: cover;
+  transform: rotateZ(115deg);
+  filter: opacity(0);
+  transition: 0s;
+}
+
+.earth::after {
+  content: '';
+  position: absolute;
+  top: 55%;
+  left: 60%;
+  width: 200px;
+  height: 200px;
+  background: url(img/explo2.png);
+  background-size: cover;
+  background-position: -20px 0px;
+  transform: rotateZ(115deg);
+  filter: opacity(0);
+  transition: 0s;
+}
+
+.earth:hover::after{
+  transform: rotateZ(115deg);
+  filter: opacity(1);
+  transition-delay: 2s;
+  transition-duration: 3s;
+}
+
+.earth:hover::before{
+  transform: rotateZ(95deg)
+  translate(-50px, 450px);
+  filter: opacity(1);
+  transition: 5s;
+  /* filter: drop-shadow(15px 15px 15px orange) drop-shadow(-15px 15px 15px orange)
+    drop-shadow(15px -15px 15px orange) drop-shadow(-15px -15px 15px orange)
+    drop-shadow(5px 5px 5px rgba(255, 0, 0, 0.5))
+    drop-shadow(-5px 5px 5px rgba(255, 0, 0, 0.5))
+    drop-shadow(5px -5px 5px rgba(255, 0, 0, 0.5))
+    drop-shadow(-5px -5px 5px rgba(255, 0, 0, 0.5)); */
+} 
+
+.cloud {
+  display: none;
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  filter: invert(1);
+  top: -15%;
+  left: 55%;
+}
+
+.cloud img {
+  width: 300%;
+  height: 200%;
+}
+
+.cloud p {
+  position: absolute;
+  top: 110%;
+  left: 70%;
+  font-size: 36px;
+}
+
+.container {
+  position: relative;
+  display: none;
+  /* display: block; */
+  overflow: hidden;
+  width: 100%;
+  height: 100vh;
+  background: url(img/space.png);
+  background-position: 0px -55%;
+  background-size: cover;
+}
+
+.game-info {
+  position: absolute;
+  /* display: flex; */
+  text-align: right;
+  width: 100%;
+  height: 400px;
+  color: white;
+  font-size: 22px;
+  transform: translateY(20px);
+}
+
+.asteroids {
+  position: relative;
+  width: 100%;
+  height: 20%;
+}
+
+.asteroid {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  transition: 0.3s;
+}
+
+.asteroid img {
+  position: absolute;
+  top: -105%;
+  left: -114%;
+  width: 300%;
+  height: 300%;
+}
+
+.nuclear-explo {
+  transition: 10s;
+  filter: opacity(1);
+}
+
+.nuclear-explo::before {
+  /* content: '-1 000 000 000 humans'; */
+  content: '';
+  color: white;
+  position: absolute;
+  top: -320%;
+  left: -215%;
+  display: flex;
+  font-size: 34px;
+  text-align: center;
+  width: 520px;
+  z-index: 5;
+}
+
+.nuclear-explo img {
+  transform: scale(2) translateY(-120px);
+  /* filter: opacity(1); */
+}
+
+.beams {
+  position: absolute;
+  width: 100%;
+  height: 10%;
+  top: 73%;
+}
+
+.beam {
+  position: absolute;
+  display: flex;
+  left: 923px;
+  top: -150px;
+  width: 50px;
+  height: 50px;
+  transition: 0.1s;
+}
+
+.beam img {
+  position: absolute;
+  top: -25px;
+  left: -23px;
+  width: 200%;
+  height: 200%;
+  transform: rotateZ(-90deg);
+}
+
+.ship {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  top: 85%;
+  left: var(--sx);
+  transition: 0.2s;
+}
+
+.ship img {
+  position: absolute;
+  top: -100px;
+  left: -75px;
+  width: 200%;
+  height: 200%;
+}
+
+.end-game {
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.7);
+  position: absolute;
+  display: flex;
+  z-index: 3;
+  justify-content: center;
+  align-items: center;
+  transform: translate(-100%, -20%);
+}
+
+.end-game-show {
+  transition: 5s;
+  transform: translate(0%, -20%);
+}
+
+.end-info {
+  width: 800px;
+  height: 500px;
+  color: #00ade1;
+}
+
+.header {
+  width: 100%;
+  height: 25%;
+  text-align: center;
+  padding-top: 20px;
+  font-size: 20px;
+}
+
+.main-text {
+  width: 100%;
+  height: 50%;
+  font-size: 85px;
+  text-align: center;
+}
+
+.results {
+  width: 100%;
+  height: 25%;
+  text-align: center;
+  font-size: 20px;
+}
+
+.reset {
+  position: absolute;
+  top: 25%;
+  left: 3%;
+  width: 400px;
+  height: 400px;
+  color: #00ade1;
+  font-size: 20px;
+  text-align: center;
+}
+
+.reset img {
+  width: 100%;
+  height: 100%;
+  transition: 2s;
+}
+
+.reset img:hover {
+  cursor: pointer;
+  transition: 2s;
+  transform: rotateZ(-15deg);
+}
