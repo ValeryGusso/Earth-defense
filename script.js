@@ -211,6 +211,7 @@ function keyPress(event) {
 }
 
 function startGame() {
+  document.querySelector('html').style.cursor = 'none'
   return setInterval(() => {
     counterToEnd > 0 ? createAsteroid() : endGame()
   }, 1000 * lvl)
@@ -220,9 +221,12 @@ let intervalGame
 function endGame() {
   $endGame.classList.add('end-game-show')
   $results.textContent = `Your score: ${counter}`
+  document.querySelector('html').style.cursor = ''
   $cloud.style.display = 'none'
   clearInterval(intervalGame)
   end = true
+  autoShot.stop(auto)
+  auto = undefined
 }
 
 const control = `<ul><li>Move left : A</li>
